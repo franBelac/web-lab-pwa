@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Tracker</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Tracker</h1>
+        <button id="install-button" class="install-button hidden">Install App</button>
+        <div id="offline-notification" class="hidden">
+            You're currently offline. Changes will sync when you're back online.
+        </div>
+
+        <div id="camera-container">
+            <div id="camera-fallback" class="hidden">
+                Camera not available. You can still track your plants manually.
+            </div>
+            <video id="camera-preview" autoplay playsinline class="hidden"></video>
+            <canvas id="photo-canvas" class="hidden"></canvas>
+            <div class="button-container">
+                <button id="start-camera" class="button">Start Camera</button>
+                <button id="take-photo" class="button hidden">Take Photo</button>
+            </div>
+        </div>
+
+        <div id="plant-form" class="hidden">
+            <h2>Add New Plant</h2>
+            <input type="text" id="plant-name" placeholder="Plant Name">
+            <input type="text" id="plant-species" placeholder="Species">
+            <button id="save-plant" class="button">Save Plant</button>
+        </div>
+
+        <div id="plants-list">
+            <h2>My Plants</h2>
+            <div id="plants-container"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
