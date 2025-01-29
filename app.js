@@ -76,18 +76,7 @@ class PlantTracker {
                 
                 if ('Notification' in window) {
                     const permission = await Notification.requestPermission();
-                    
-                    if (permission === 'granted' && 'PushManager' in window) {
-                        try {
-                            const subscription = await registration.pushManager.subscribe({
-                                userVisibleOnly: true,
-                                applicationServerKey: urlBase64ToUint8Array('BILhUrxvQHWUoYMfgDG1ie62Ht41CFY2HluuEzVv1J1ijI_8Zw7kYKUwnmoGvTXBXElct_bCKJ8T0zcTJDlmSk4')
-                            });
-                            console.log('Push notification subscription successful:', subscription);
-                        } catch (pushError) {
-                            console.log('Push subscription failed:', pushError);
-                        }
-                    }
+                    // did not implement push
                 }
                 
                 console.log('Service Worker registered successfully');
